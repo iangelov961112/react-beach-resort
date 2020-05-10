@@ -1,7 +1,7 @@
-import React, { createContext, Component } from 'react';
+import React, { Component } from 'react';
 import items from './data';
 
-const RoomContext = createContext();
+const RoomContext = React.createContext();
 
 class RoomProvider extends Component {
 
@@ -9,7 +9,16 @@ class RoomProvider extends Component {
         rooms: [],
         sortedRooms: [],
         featuredRooms: [],
-        loading: true
+        loading: true,
+        type: "all",
+        capacity: 1,
+        price: 0,
+        minPrice: 0,
+        maxPrice: 0,
+        mixSize: 0,
+        maxSize: 0,
+        breakfast: false,
+        pets: false
     }
 
     formatData(items) {
@@ -32,6 +41,7 @@ class RoomProvider extends Component {
         return room;
     }
 
+    //get data
     componentDidMount () {
         let rooms = this.formatData(items);
         let featuredRooms = rooms.filter(room => room.featured === true);
@@ -52,7 +62,17 @@ class RoomProvider extends Component {
     }
 }
 
-const RoomConsumer = RoomContext.Consumer
+const RoomConsumer = RoomContext.Consumer;
+
+export function withRoomConsumer(Component) {
+    return function ConsumerWrapper (props) {
+        return <RoomConsumer>
+            {
+                value => <Component {...props} context={value} />
+            }
+        </RoomConsumer>
+    }
+}
 
 
-export {RoomProvider, RoomConsumer, RoomContext};
+export { RoomProvider, RoomConsumer, RoomContext };

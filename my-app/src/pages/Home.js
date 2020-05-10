@@ -6,9 +6,7 @@ import Banner from '../component/Banner';
 import Services from '../component/Services';
 import FeaturedRooms from '../component/FeaturedRooms';
 
-import Button from '../component/StyledHero';
-
-export default function Home () {
+function Home () {
     return (
         <>
             <Hero>
@@ -21,7 +19,8 @@ export default function Home () {
 
             <Services />
             <FeaturedRooms />
-            <Button>Hello</Button>
         </>
     );
 }
+
+export default Home

@@ -5,7 +5,7 @@ import Hero from '../component/Hero';
 import Banner from '../component/Banner';
 
 
-export default function Error() {
+function Error() {
     return( 
         <Hero>
             <Banner title="404" subtitle="page not found">
@@ -14,3 +14,5 @@ export default function Error() {
         </Hero>
     )
 }
+
+export default Error;

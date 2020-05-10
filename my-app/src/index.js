@@ -6,12 +6,10 @@ import App from './App';
 import { RoomProvider } from './context';
 
 ReactDOM.render(
-    <React.StrictMode>
-        <RoomProvider>
-            <Router>
-                <App />
-            </Router>
-        </RoomProvider>
-    </React.StrictMode>,
-    document.getElementById('root')
-);
+    <RoomProvider>
+        <Router>
+            <App />
+        </Router>
+    </RoomProvider>
+
+, document.getElementById('root'));

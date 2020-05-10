@@ -5,7 +5,7 @@ import Loading from './Loading';
 import Room from './Room';
 import Title from './Title';
 
-export default class FeaturedRooms extends Component {
+class FeaturedRooms extends Component {
     static contextType = RoomContext;
 
     render() {
@@ -29,3 +29,5 @@ export default class FeaturedRooms extends Component {
         )
     }
 }
+
+export default FeaturedRooms;

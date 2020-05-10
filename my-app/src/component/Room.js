@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import defaultImg from '../images/room-1.jpeg';
 
-export default function Room({ room }) {
+function Room({ room }) {
 const { name, slug, images, price } = room;
     return (
         <article className="room">
@@ -30,3 +30,5 @@ Room.propTypes = {
         price: PropTypes.number.isRequired
     })
 }
+
+export default Room;
